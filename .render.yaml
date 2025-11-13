@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: stock-fuzzy-app
+    env: python
+    region: oregon    # or 'frankfurt' if you’re in Europe/Asia
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PORT
+        value: 10000
