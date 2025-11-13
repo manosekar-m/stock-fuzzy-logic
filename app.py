@@ -5,8 +5,11 @@ import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 import ta
 from sklearn.linear_model import LinearRegression
+from flask_cors import CORS
+import os
 
 app = Flask(__name__)
+CORS(app)
 
 # ---------------------------
 # 1️⃣ Load and prepare data
@@ -114,5 +117,10 @@ def predict():
                            trend=trend_label,
                            price=round(pred_price, 2))
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# ---------------------------
+# 5️⃣ Main entry point
+# ---------------------------
+if __name__ == "__main__":
+    from flask_cors import CORS
+    CORS(app)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
