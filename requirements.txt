@@ -2,7 +2,7 @@ Flask==3.0.3
 flask-cors==4.0.0
 pandas==2.2.3
 numpy==1.26.4
-scikit-fuzzy==0.4.2
+git+https://github.com/twiecki/scikit-fuzzy@master
 scikit-learn==1.5.2
 ta==0.11.0
 requests==2.32.3
